@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  color: white;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  background-color: #359aff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 170, 255, 0.07);
+  margin-bottom: 30px;
+}
+
+section h2 {
+  color: #359aff;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  border-bottom: 3px solid #359aff;
+  padding-bottom: 10px;
+}
+
+/* form */
+form {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+
+form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+
+input[type="text"],
+input[type="number"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #359aff;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    /* accent-color: #359aff; */
+    cursor: pointer;
+}
+
+button {
+    padding: 15px;
+    background-color: #359aff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#bookFormSubmit {
+    background-color:  #359aff;
+    color: white;
+    margin-top: 10px;
+}
+
+#bookFormSubmit:hover {
+  background: rgba(42, 124, 212, 0.8);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(53, 154, 255, 0.3);
+}
+
+#searchSubmit {
+  background: #359aff;
+  color: white;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+#searchSubmit:hover {
+  background: rgba(42, 124, 212, 0.8);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(53, 154, 255, 0.3);
+}
+
+/* book item */
+[data-testid="bookItem"] {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #359aff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+[data-testid="bookItem"]:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+[data-testid="bookItemTitle"] {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+[data-testid="bookItemAuthor"],
+[data-testid="bookItemYear"] {
+  color: #555;
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+[data-testid="bookItem"] > div {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+[data-testid="bookItemIsCompleteButton"] {
+  background: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+[data-testid="bookItemIsCompleteButton"]:hover {
+  background: #45a049;
+}
+
+[data-testid="bookItemDeleteButton"] {
+  background: #f44336;
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+[data-testid="bookItemDeleteButton"]:hover {
+  background: #da190b;
+}
+
+[data-testid="bookItemEditButton"] {
+  background: #ff9800;
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+
+[data-testid="bookItemEditButton"]:hover {
+  background: #e68900;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  color: #999;
+  padding: 30px;
+  font-style: italic;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  [data-testid="bookItem"] > div {
+    flex-direction: column;
+  }
+
+  [data-testid="bookItem"] > div button {
+    width: 100%;
+  }
+}
